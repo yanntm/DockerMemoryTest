@@ -4,7 +4,7 @@ sudo: false
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup']
+    packages: ['cget']
  
 
 language : C
