@@ -1,0 +1,12 @@
+dist: trusty
+sudo: false
+
+
+language : C
+
+script :
+  - free
+  - cat /proc/meminfo
+  - cgget -n --values-only --variable memory.limit_in_bytes /
+  - gcc test.c -o testmem 
+  - ./testmem
