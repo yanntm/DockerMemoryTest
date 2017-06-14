@@ -15,3 +15,7 @@ script :
   - cgget -n --values-only --variable memory.limit_in_bytes /
   - gcc test.c -o testmem 
   - ./testmem
+  - ./install_ltsmin.sh
+  - lts_install_dir/bin/pins2lts-seq --help
+  - lts_install_dir/bin/pins2lts-mc --help
+  
