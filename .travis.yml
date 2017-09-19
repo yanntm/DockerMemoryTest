@@ -4,7 +4,7 @@ sudo: false
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup-bin']
+    packages: ['cgroup-bin','g++-5']
  
 
 language : C
