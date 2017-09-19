@@ -4,7 +4,7 @@ sudo: false
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup-bin','g++-5']
+    packages: ['cgroup-bin','g++-5','valgrind']
  
 
 language : C
@@ -18,4 +18,4 @@ script :
   - ./install_ltsmin.sh
   - lts_install_dir/bin/pins2lts-seq --help
   - lts_install_dir/bin/pins2lts-mc --help
-  
+  - valgrind --tool=memcheck lts_install_dir/bin/pins2lts-mc --help
