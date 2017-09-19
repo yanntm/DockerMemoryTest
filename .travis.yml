@@ -19,3 +19,5 @@ script :
   - lts_install_dir/bin/pins2lts-seq --help
   - lts_install_dir/bin/pins2lts-mc --help
   - valgrind --tool=memcheck lts_install_dir/bin/pins2lts-mc --help
+  - valgrind --tool=helgrind lts_install_dir/bin/pins2lts-mc --help
+  
