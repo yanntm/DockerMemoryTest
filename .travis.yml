@@ -4,7 +4,7 @@ sudo: false
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup-bin','g++-5','valgrind']
+    packages: ['cgroup-bin','libpopt-dev','g++-7','valgrind']
  
 
 language : C
