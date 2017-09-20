@@ -4,8 +4,8 @@ sudo: false
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup-bin','libpopt-dev','g++-7','valgrind']
- 
+    packages: ['cgroup-bin','g++-7','valgrind']
+#  'libpopt-dev'
 
 language : C
 
@@ -15,6 +15,12 @@ script :
   - cgget -n --values-only --variable memory.limit_in_bytes /
   - gcc test.c -o testmem 
   - ./testmem
+  - wget http://rpm5.org/files/popt/popt-1.16.tar.gz
+  - tar xvzf popt-1.16.tar.gz
+  - cd popt-1.16
+  - ./configure CFLAGS='-g -O0'
+  - make && make install
+  - cd ..
   - ./install_ltsmin.sh
   - lts_install_dir/bin/pins2lts-seq --help
   - lts_install_dir/bin/pins2lts-mc --help
