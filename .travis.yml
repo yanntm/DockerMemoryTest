@@ -1,10 +1,10 @@
 dist: trusty
-sudo: true
+sudo: false
 
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']  
-    packages: ['cgroup-bin','g++-7','valgrind']
+    packages: ['cgroup-bin','valgrind']
 #  'libpopt-dev'
 
 language : C
@@ -19,7 +19,8 @@ script :
   - tar xvzf popt-1.16.tar.gz
   - cd popt-1.16
   - ./configure CFLAGS='-g -O0'
-  - make && sudo make install
+  - make
+  - export LD_LIBRARY_PATH=$PWD
   - cd ..
   - ./install_ltsmin.sh
   - lts_install_dir/bin/pins2lts-seq --help
