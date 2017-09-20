@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: true
 
 addons:
   apt:
@@ -19,7 +19,7 @@ script :
   - tar xvzf popt-1.16.tar.gz
   - cd popt-1.16
   - ./configure CFLAGS='-g -O0'
-  - make && make install
+  - make && sudo make install
   - cd ..
   - ./install_ltsmin.sh
   - lts_install_dir/bin/pins2lts-seq --help
